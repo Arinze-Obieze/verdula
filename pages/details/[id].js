@@ -30,8 +30,8 @@ const ProductDetailPage = () => {
 
 
     // Destructuring from product, or using an empty object as default if product is null
-    const { name, picture, description, price } = product || {};
-
+    const { productName, productPrice, productDescription, cloudinaryImageURL } = product || {};
+    // console.log(product)
 
 
     return (
@@ -40,14 +40,14 @@ const ProductDetailPage = () => {
                 <>
                     <div className='flex flex-col mt-12  items-center md:flex-row'>
                         <div className='w-64 bg-blue-100 p-5 rounded-xl '>
-                            <img src={picture} alt='' />
+                            <img src={cloudinaryImageURL} alt='' />
                         </div>
                         <div>
                             <span className='flex mt-2 justify-around'>
-                                <h3 className='font-bold text-lg mt-1'>{name}</h3>
-                                <div className='flex text-xl font-bold '> <Image width='24' height='24' src='/naira.png' alt='naira' />{price}</div>
+                                <h3 className='font-bold text-lg mt-1'>{productName}</h3>
+                                <div className='flex text-xl font-bold '> <Image width='24' height='24' src='/naira.png' alt='naira' />{productPrice}</div>
                             </span>
-                            <p className='text-sm mt-1  text-gray-900 leading-4 px-5'>{description}</p>
+                            <p className='text-sm mt-1  text-gray-900 leading-4 px-5'>{productDescription}</p>
                         </div>
 
                     </div>
