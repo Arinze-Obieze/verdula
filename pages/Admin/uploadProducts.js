@@ -58,30 +58,39 @@ const UploadProducts = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="file" name="image" onChange={(event) => setFile(event.target.files[0])} />
-                <span>
-                    Description
+        <>
+            <form onSubmit={handleSubmit} className='flex flex-col   text-center space-y-12'>
+                <h1 className="bg-black text-3xl py-4 text-white font-serif">UPLOAD PRODUCTS</h1>
+                <span className="flex flex-col border-2 mx-6">
+                    <h3>Input Product Image</h3>
+                    <input type="file"
+                        className="border-2 border-gray-700 mx-4 my-4"
+                        name="image" onChange={(event) => setFile(event.target.files[0])} />
+                </span>
+                <span className="flex flex-col border-2 mx-6">
+                    Input Product Description
                     <input
+                        className="border-2 border-gray-700 mx-4 my-4"
                         type="text"
                         name="productDescription"
                         value={productDescription}
                         onChange={(event) => setProductDescription(event.target.value)}
                     />
                 </span>
-                <span>
-                    name
+                <span className="flex flex-col border-2 mx-6">
+                    Input Product Name
                     <input
+                        className="border-2 border-gray-700 mx-4 my-4"
                         type="text"
                         name="productName"
                         value={productName}
                         onChange={(event) => setProductName(event.target.value)}
                     />
                 </span>
-                <span>
-                    price
+                <span className="flex flex-col border-2 mx-6">
+                    Input Product Price
                     <input
+                        className="border-2 border-gray-700 mx-4 my-4"
                         type="number"
                         name="productPrice"
                         value={productPrice}
@@ -89,9 +98,10 @@ const UploadProducts = () => {
                     />
                 </span>
 
-                <span>
-                    category
+                <span className="flex flex-col border-2 mx-6">
+                    Input Product Category
                     <input
+                        className="border-2 border-gray-700 mx-4 my-4"
                         type="text"
                         name="productCategory"
                         value={productCategory}
@@ -103,7 +113,7 @@ const UploadProducts = () => {
 
             {loading && <p>Creating product...</p>}
             {success && <p>Product created successfully!</p>}
-        </div>
+        </>
     );
 };
 

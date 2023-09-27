@@ -1,3 +1,4 @@
+import { getSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { FaNairaSign } from "react-icons/fa6";
 
@@ -5,6 +6,11 @@ const Order = ({ total }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [location, setLocation] = useState('');
+
+
+
+
+
 
     useEffect(() => {
         console.log("Total prop changed:", total);
@@ -23,6 +29,8 @@ const Order = ({ total }) => {
     };
 
     const handlePayment = async () => {
+
+
         const url = '/api/paystack_api'
 
         try {
@@ -37,8 +45,8 @@ const Order = ({ total }) => {
                 }
 
             )
-            
-            console.log( response,total, email)
+
+            console.log(response, total, email)
             if (response.ok) {
                 const responseData = await response.json();
                 console.log('Payment initialization Data:', responseData);
