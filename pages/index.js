@@ -4,8 +4,31 @@ import Product from '@/components/Product'
 import { InitMongoose } from '@/lib/mongoose'
 import { findAllProducts } from './api/products'
 import Layout from '@/components/Layout'
+import { RiCustomerService2Line } from "react-icons/ri";
+import { useEffect } from 'react'
 
 export default function Home({ products }) {
+  const [showText, setShowText] = useState(true)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const handleScroll = () => {
+    // Check the scroll position
+    if (window.scrollY > 0) {
+      // User has scrolled down, hide the text
+      setShowText(false);
+    } else {
+      // User is at the top, show the text
+      setShowText(true);
+    }
+  };
+
   // State to manage the search phrase input
   const [phrase, setPhrase] = useState('')
 
@@ -47,7 +70,17 @@ export default function Home({ products }) {
             </div>
           ))}
         </div>
+
       </Layout>
+      {showText ?
+        <div className='absolute right-3 bottom-[150px]'>
+          <div className=' bg-emerald-400 rounded-full p-6 '>
+            <RiCustomerService2Line className='text-4xl text-white' />
+          </div>
+          <span>Talk to us</span>
+        </div>
+        : ''}
+
     </>
   )
 }

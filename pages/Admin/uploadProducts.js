@@ -9,8 +9,8 @@ const UploadProducts = () => {
     const [file, setFile] = useState();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
-    const uploadPreset = "verdula";
-    const OUR_CLOUD_NAME = "dxzw4yiff";
+    const uploadPreset = process.env.UPLOAD_PRESET
+    const OUR_CLOUD_NAME =process.env.CLOUD_NAME
 
     const handleFileUpload = async () => {
         setLoading(true);

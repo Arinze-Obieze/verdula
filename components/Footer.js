@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { ProductsContext } from "./ProductsContext";
-
+import { CgProfile } from "react-icons/cg";
 const Footer = () => {
     const router = useRouter();
     const path = router.pathname
@@ -11,7 +11,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="fixed bottom-0 bg-white p-5 w-full flex border-t border-gray-200 justify-center space-x-12 text-gray-400">
+        <footer className="fixed bottom-0 bg-white p-5 w-full flex border-t border-gray-200 justify-between space-x-12 text-gray-400">
             <Link href={'/'}>
                 <div className={(path === '/' ? 'text-emerald-500' : '') + " flex justify-center items-center flex-col"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -28,6 +28,13 @@ const Footer = () => {
                     </svg>
                     <span>Cart {selectedProducts?.length || 0}</span>
                 </div>
+            </Link>
+            <Link href={'/Profile'} className='pr-2'>
+                <div className={(path === '/Profile' ? 'text-emerald-500 ' : '') + 'flex justify-center items-center flex-col'}>
+                    <CgProfile className="w-8 h-7" />
+                    <span>Profile</span>
+                </div>
+
             </Link>
         </footer>
 

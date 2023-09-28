@@ -10,7 +10,7 @@ const SignIn = () => {
     }
     return (
         <>
-
+<div className="bg-gray-100">
             {
                 data
                     ?
@@ -33,7 +33,7 @@ const SignIn = () => {
                         </button>
                     </div>
             }
-
+</div>
         </>
     );
 }
