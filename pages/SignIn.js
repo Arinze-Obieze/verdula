@@ -26,7 +26,7 @@ const SignIn = () => {
                     </div>
                     :
                     <div className="flex flex-col justify-center items-center min-h-screen" >
-                        <SignInForm />
+                        {/* <SignInForm /> */}
                         <button
                             className="border-2 mt-6 px-2 py-2 text-xl text-white bg-emerald-500"
                             onClick={handleSignIn}>Sign In With Google

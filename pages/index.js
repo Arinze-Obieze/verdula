@@ -74,8 +74,8 @@ export default function Home({ products }) {
       </Layout>
       {showText ?
         <div className='absolute right-3 bottom-[150px]'>
-          <div className=' bg-emerald-400 rounded-full p-6 '>
-            <RiCustomerService2Line className='text-4xl text-white' />
+          <div className=' bg-emerald-400 rounded-full lg:p-6 p-6 '>
+            <RiCustomerService2Line className='lg:text-4xl text-xl  text-white' />
           </div>
           <span>Talk to us</span>
         </div>
