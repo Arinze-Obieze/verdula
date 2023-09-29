@@ -29,7 +29,7 @@ const Footer = () => {
                     <span>Cart {selectedProducts?.length || 0}</span>
                 </div>
             </Link>
-            <Link href={'/Profile'} className='pr-2'>
+            <Link href={'/Profile'} className='pr-8'>
                 <div className={(path === '/Profile' ? 'text-emerald-500 ' : '') + 'flex justify-center items-center flex-col'}>
                     <CgProfile className="w-8 h-7" />
                     <span>Profile</span>
