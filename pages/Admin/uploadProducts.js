@@ -9,9 +9,10 @@ const UploadProducts = () => {
     const [file, setFile] = useState();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
-    const uploadPreset = process.env.UPLOAD_PRESET
-    const OUR_CLOUD_NAME =process.env.CLOUD_NAME
-
+    const uploadPreset = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
+    const OUR_CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
+    console.log(uploadPreset)
+    console.log(OUR_CLOUD_NAME)
     const handleFileUpload = async () => {
         setLoading(true);
 
@@ -108,7 +109,7 @@ const UploadProducts = () => {
                         onChange={(event) => setProductCategory(event.target.value)}
                     />
                 </span>
-                <button type="submit" disabled={loading}>Submit</button>
+                <button type="submit" disabled={loading} className='p-4'>Submit</button>
             </form>
 
             {loading && <p>Creating product...</p>}
